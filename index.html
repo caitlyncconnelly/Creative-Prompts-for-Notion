@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creative Prompt Generator</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 id="prompt">Click for a prompt</h2>
+    <button onclick="newPrompt()">New Prompt</button>
+  </div>
+
+  <script>
+    const prompts = [
+      "Write a scene that starts after the argument already ended.",
+      "Describe a place using only sounds.",
+      "Two characters want the same thing for opposite reasons.",
+      "Write something that feels like a secret.",
+      "A character realizes they were wrong too late."
+    ];
+
+    function newPrompt() {
+      const prompt = prompts[Math.floor(Math.random() * prompts.length)];
+      document.getElementById("prompt").innerText = prompt;
+    }
+  </script>
+</body>
+</html>
